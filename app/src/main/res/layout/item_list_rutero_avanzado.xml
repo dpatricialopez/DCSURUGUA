@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp">
+
+    <ImageView
+        android:id="@+id/imgIndicador"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/ic_help_black_24dp"
+        android:tint="@color/colorPrimary" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imgIndicador"
+        android:layout_marginLeft="5dp"
+        android:layout_toEndOf="@+id/imgIndicador"
+        android:layout_toRightOf="@+id/imgIndicador"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtIdPos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idpos"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_letra_app_titulo"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtNombrePunto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_letra_app_titulo"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtNombreCliente"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/nombre_del_cliente"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/dimen_letra_app_titulo"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txtDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:textSize="@dimen/dimen_letra_app_estandar" />
+
+    </LinearLayout>
+
+</RelativeLayout>

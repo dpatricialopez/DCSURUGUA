@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#10628a</color>
+    <color name="colorPrimaryDark">#67c3e9</color>
+    <color name="colorAccent">#a7d972</color>
+
+    <color name="actionBarColorText">#ffffff</color>
+
+    <color name="grid_item_bg_pressed">#efeeee</color>
+    <color name="list_item_background">#AACCCCCC</color>
+
+    <color name="filn">#607D8B</color>
+    <color name="colorSinDatos">#f9e367</color>
+    <color name="colorErrorConexion">#42a5f5</color>
+    <color name="verde_progress">#298A08</color>
+    <color name="rojo_progress">#ff3d00</color>
+
+</resources>

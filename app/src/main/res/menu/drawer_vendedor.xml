@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_inicio_vendedor"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Inicio" />
+        <item
+            android:id="@+id/nav_vistar_pdv"
+            android:icon="@drawable/ic_assignment_turned_in_black_24dp"
+            android:title="Visitar PDV" />
+        <item
+            android:id="@+id/nav_venta_cliente"
+            android:icon="@drawable/ic_monetization_on_black_24dp"
+            android:title="Venta Cliente" />
+        <item
+            android:id="@+id/nav_gestor_pdv"
+            android:icon="@drawable/ic_border_color_black_24dp"
+            android:title="Gestor PDV" />
+        <item
+            android:id="@+id/nav_planificar_visita"
+            android:icon="@drawable/ic_swap_vert_black_24dp"
+            android:title="Planificar Visita" />
+        <item
+            android:id="@+id/nav_sol_producto"
+            android:icon="@drawable/ic_sim_card_black_24dp"
+            android:title="Solicitar Producto" />
+
+        <item android:title="Mis Reportes">
+            <menu>
+                <item
+                    android:id="@+id/nav_inventario_vendedor"
+                    android:icon="@drawable/ic_featured_play_list_black_24dp"
+                    android:title="Mi Inventario" />
+                <item
+                    android:id="@+id/nav_ventas_vendedor"
+                    android:icon="@drawable/ic_show_chart_black_24dp"
+                    android:title="Mis Ventas" />
+                <item
+                    android:id="@+id/nav_rutero_vendedor"
+                    android:icon="@drawable/ic_ruta_24dp"
+                    android:title="Mi Rutero" />
+                <item
+                    android:id="@+id/nav_baja_vendedor"
+                    android:icon="@drawable/ic_trending_down_black_24dp"
+                    android:title="Mis Bajas" />
+                <item
+                    android:id="@+id/nav_sol_vendedor"
+                    android:icon="@drawable/ic_insert_chart_black_24dp"
+                    android:title="Mis Solicitudes" />
+            </menu>
+        </item>
+
+        <item
+            android:id="@+id/nav_cerrar_sesion"
+            android:icon="@drawable/ic_exit_to_app_black_24dp"
+            android:title="Cerrar Sesión" />
+
+    </group>
+
+
+
+
+
+</menu>

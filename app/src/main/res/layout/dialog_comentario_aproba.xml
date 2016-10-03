@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="11dp"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/EditComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="3"
+        android:maxLength="150"
+        android:background="@drawable/rounded_corner"
+        android:gravity="top|left"
+        android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ áéíóú ÁÉÍÓÚ 0123456789"
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
+        android:minWidth="10.0dip"
+        android:textSize="@dimen/dimen_letra_app_estandar"
+        android:maxWidth="180dip" />
+
+</LinearLayout>

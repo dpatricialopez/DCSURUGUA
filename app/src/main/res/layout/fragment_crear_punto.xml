@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grid_item_bg_pressed"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="35dp"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_marginLeft="@dimen/spacing_large"
+                android:layout_marginRight="@dimen/spacing_large"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:contentPaddingLeft="16dp"
+                app:contentPaddingRight="16dp"
+                app:contentPaddingTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/datos_personales"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/dimen_letra_app_titulo"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="18dp">
+
+                        <ImageView
+                            android:id="@+id/image_mail"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_perm_identity_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/input_layout_password1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_mail"
+                            android:layout_toRightOf="@+id/image_mail">
+
+                            <EditText
+                                android:id="@+id/edit_nombres"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ áéíóú ÁÉÍÓÚ 0123456789"
+                                android:hint="@string/nombre"
+                                android:inputType="text"
+                                android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:textStyle="bold"
+                        android:textSize="10sp"
+                        android:textColor="@color/colorAccent"
+                        android:text="Tipo de documento" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+
+                        <ImageView
+                            android:id="@+id/image_tipo_documento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:tint="@color/colorPrimary"
+                            android:src="@drawable/ic_person_pin_black_24dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:contentDescription="@string/app_name"/>
+
+                        <Spinner
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/spinner_tipo_documento"
+                            android:textSize="@dimen/dimen_letra_app_estandar"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toRightOf="@+id/image_tipo_documento"
+                            android:layout_toEndOf="@+id/image_tipo_documento" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="18dp">
+
+                        <ImageView
+                            android:id="@+id/image_cell"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_assignment_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <EditText
+                            android:id="@+id/edit_cedula"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number"
+                            android:textSize="@dimen/dimen_letra_app_estandar"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@+id/image_cell"
+                            android:layout_toEndOf="@+id/image_cell" />
+
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="18dp">
+
+                        <ImageView
+                            android:id="@+id/image_phone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_perm_identity_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/edit_phone_e"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_phone"
+                            android:layout_toRightOf="@+id/image_phone">
+
+                            <EditText
+                                android:id="@+id/edit_nom_cli"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="@string/nombre_del_cliente"
+                                android:inputType="text"
+                                android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="18dp">
+
+                        <ImageView
+                            android:id="@+id/image_correo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_email_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/edit_correo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_correo"
+                            android:layout_toRightOf="@+id/image_correo">
+
+                            <EditText
+                                android:id="@+id/edit_correo_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Correo"
+                                android:inputType="text"
+                                android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="18dp">
+
+                        <ImageView
+                            android:id="@+id/image_tel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_phone_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/edit_tel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_tel"
+                            android:layout_toRightOf="@+id/image_tel">
+
+                            <EditText
+                                android:id="@+id/edit_tel_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Teléfono"
+                                android:inputType="number"
+                                android:maxLength="13"
+                                android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="18dp">
+
+                        <ImageView
+                            android:id="@+id/image_cell_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_phone_android_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/edit_cel2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_cell_2"
+                            android:layout_toRightOf="@+id/image_cell_2">
+
+                            <EditText
+                                android:id="@+id/edit_cel_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Celular"
+                                android:inputType="number"
+                                android:maxLength="13"
+                                android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_marginLeft="@dimen/spacing_large"
+                android:layout_marginRight="@dimen/spacing_large"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:contentPaddingBottom="16dp"
+                app:contentPaddingLeft="16dp"
+                app:contentPaddingRight="16dp"
+                app:contentPaddingTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/localizacion"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/dimen_letra_app_titulo"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/departamento"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_departamento"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_list_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <Spinner
+                            android:id="@+id/spinner_departamento"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_departamento"
+                            android:layout_toRightOf="@+id/image_departamento"
+                            android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ciudad"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_ciudad"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_list_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <Spinner
+                            android:id="@+id/spinner_ciudad"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_ciudad"
+                            android:layout_toRightOf="@+id/image_ciudad"
+                            android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="18dp">
+
+                        <ImageView
+                            android:id="@+id/image_barrio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_list_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+
+                        <android.support.design.widget.TextInputLayout
+                            android:id="@+id/edit_barrio"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_barrio"
+                            android:layout_toRightOf="@+id/image_barrio">
+
+                            <EditText
+                                android:id="@+id/edit_tel_barrio"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Barrio"
+                                android:inputType="text"
+                                android:maxLength="13"
+                                android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                        </android.support.design.widget.TextInputLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_marginLeft="@dimen/spacing_large"
+                android:layout_marginRight="@dimen/spacing_large"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:contentPaddingBottom="16dp"
+                app:contentPaddingLeft="16dp"
+                app:contentPaddingRight="16dp"
+                app:contentPaddingTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/direcci_n"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/dimen_letra_app_titulo"
+                        android:textStyle="bold" />
+
+                    <!--<TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/tipo_via"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_tipo_via"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_list_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <Spinner
+                            android:id="@+id/spinner_tipo_via"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_tipo_via"
+                            android:layout_toRightOf="@+id/image_tipo_via"
+                            android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                    </RelativeLayout>-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_dir_dir"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_create_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/image_dir_dir"
+                            android:layout_toRightOf="@+id/image_dir_dir"
+                            android:orientation="horizontal">
+
+                            <android.support.design.widget.TextInputLayout
+                                android:id="@+id/numbera"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="1">
+
+                                <EditText
+                                    android:id="@+id/edit_a"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:digits="abcdefghijklmnñopqrstuvwxyz ABCDEFGHIJKLMNÑOPQRSTUVWXYZ 0123456789"
+                                    android:inputType="text"
+                                    android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                            </android.support.design.widget.TextInputLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_marginLeft="@dimen/spacing_large"
+                android:layout_marginRight="@dimen/spacing_large"
+                app:cardBackgroundColor="@android:color/white"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="4dp"
+                app:contentPaddingBottom="16dp"
+                app:contentPaddingLeft="16dp"
+                app:contentPaddingRight="16dp"
+                app:contentPaddingTop="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/datos_ruta"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/dimen_letra_app_titulo"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/estado_comercial"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_estado_comercial"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_list_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <Spinner
+                            android:id="@+id/spinner_est_comercial"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_estado_comercial"
+                            android:layout_toRightOf="@+id/image_estado_comercial"
+                            android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/circuito"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_circuito"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_list_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <Spinner
+                            android:id="@+id/spinner_circuito"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_circuito"
+                            android:layout_toRightOf="@+id/image_circuito"
+                            android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ruta"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_ruta"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_list_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <Spinner
+                            android:id="@+id/spinner_ruta"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_ruta"
+                            android:layout_toRightOf="@+id/image_ruta"
+                            android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/categoria"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="10sp"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_categoria"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_list_black_24dp"
+                            android:tint="@color/colorPrimary" />
+
+                        <Spinner
+                            android:id="@+id/spinner_categoria"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_toEndOf="@+id/image_categoria"
+                            android:layout_toRightOf="@+id/image_categoria"
+                            android:textSize="@dimen/dimen_letra_app_estandar" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/guarda_punto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/ic_save_white_24dp" />
+
+</android.support.design.widget.CoordinatorLayout>

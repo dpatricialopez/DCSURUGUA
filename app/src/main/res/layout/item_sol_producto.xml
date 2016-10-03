@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:padding="6dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Referencia: "
+            android:textStyle="bold"
+            android:id="@+id/txt_referencia_sol" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Disponible: "
+            android:layout_marginTop="4dp"
+            android:textStyle="bold"
+            android:id="@+id/txt_cantidad_sol" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad Solicitada:"
+            android:textColor="@color/rojo_progress"
+            android:layout_marginTop="4dp"
+            android:visibility="gone"
+            android:textStyle="bold"
+            android:id="@+id/txtCantSol" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

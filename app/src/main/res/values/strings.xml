@@ -1,0 +1,121 @@
+<resources>
+
+    <string name="app_name">DCS URUGUAY</string>
+    <string name="action_settings">Borrar Datos!</string>
+    <string name="usuario">Usuario</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="title_activity_act_menu">Menú Inicio</string>
+
+    <!-- URL BASE DESARROLLO -->
+    <!-- <string name="url_base">http://192.168.2.24:92/app/servicios/services.php?solicitud=</string> -->
+    <!-- <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_peru/distribuidor/modulos/login/controlador.php</string> -->
+
+    <!-- URL BASE PRUEBAS -->
+    <string name="url_base">http://prueba.movilbox.net:88/movistar_uruguay/app_mbox/servicios/services.php?solicitud=</string>
+    <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_uruguay/distribuidor/modulos/login/controlador.php</string>
+
+    <!-- URL BASE PRODUCCION -->
+    <!-- <string name="url_base">https://uruguay.movilbox.net/app/servicios/services.php?solicitud=</string> -->
+    <!-- <string name="url_base_correo">https://uruguay.movilbox.net/distribuidor/modulos/login/controlador.php</string> -->
+    <!-- -->
+
+    <!-- QUERY DATA BASE -->
+    <string name="tabla_login">CREATE TABLE login (id INT, cedula INT, nombre TEXT, apellido TEXT, user TEXT, estado INT, bd TEXT, id_distri TEXT, perfil INT, igv REAL, intervalo INT, hora_inicial TEXT, hora_final TEXT, cantidad_envios INT, fechaSincro TEXT, fechaSincroOffline TEXT, password TEXT)</string>
+    <string name="tabla_departamento">CREATE TABLE departamento (id INT, descripcion TEXT, estado_accion INT)</string>
+    <string name="tabla_municipio">CREATE TABLE municipios (id_muni INT, descripcion TEXT, departamento INT, estado_accion INT)</string>
+    <string name="tabla_direccion">CREATE TABLE nomenclaturas (id INT, nombre INT, letras TEXT, tipo_nom INT, estado_accion INT)</string>
+    <string name="tabla_categoria">CREATE TABLE categoria (id INT, descripcion TEXT, estado_accion INT)</string>
+    <string name="tabla_estado_comercial">CREATE TABLE estado_comercial (id INT, descripcion TEXT, estado_accion INT)</string>
+    <string name="tabla_territorio">CREATE TABLE territorio (id INT, descripcion TEXT, tipo_tabla INT)</string>
+    <string name="tabla_zona">CREATE TABLE zona (id INT, descripcion TEXT, id_territorio INT, tipo_tabla INT)</string>
+    <string name="tabla_punto">CREATE TABLE punto (id_auto integer primary key AUTOINCREMENT, categoria INT, cedula TEXT, celular TEXT, ciudad INT, depto INT, email TEXT, estado_com INT, idpos INT, nombre_cliente TEXT, nombre_punto TEXT, telefono TEXT, territorio INT, texto_direccion TEXT, zona INT, latitud REAL, longitud REAL, estado_visita INT, detalle TEXT, tipo_tabla INT, accion TEXT, dato_otro TEXT, otro INT, tipo_documento INT, barrio TEXT)</string>
+    <string name="tabla_refes_sims">CREATE TABLE refes_sims (id INT, pn TEXT, producto TEXT, precio_referencia REAL, precio_publico REAL, estado_accion INT, tipo_tabla INT)</string>
+    <string name="tabla_catalogo">CREATE TABLE catalogo (id INT, descripcion TEXT, precioventa REAL, speech TEXT, pantalla TEXT, cam_frontal TEXT, cam_tras TEXT, flash TEXT, banda TEXT, memoria TEXT, expandible TEXT, bateria TEXT, bluetooth TEXT, tactil TEXT, tec_fisico TEXT, carrito_compras TEXT, correo TEXT, enrutador TEXT, radio TEXT, wifi TEXT, gps TEXT, so TEXT, web TEXT, img_pri_catalogo TEXT, tipo_tabla INT)</string>
+    <string name="tabla_img_catalogo">CREATE TABLE img_catalogo (id_auto integer primary key AUTOINCREMENT, url TEXT, id_catalogo INT)</string>
+    <string name="tabla_detalle_catalogo">CREATE TABLE detalle_catalogo (id INT, id_catalogo INT, pn TEXT, producto TEXT, estado_accion INT)</string>
+    <string name="tabla_lista_precio">CREATE TABLE lista_precios (id_referencia INT, idpos INT, valor_referencia REAl, valor_directo REAL, tipo_pro INT, estado_accion INT, tipo_tabla INT )</string>
+    <string name="tabla_inventario">CREATE TABLE inventario (id INT, id_referencia INT, serie TEXT, paquete INT, id_vendedor INT, distri INT, tipo_pro INT, tipo_tabla INT, estado_accion INT, accion TEXT )</string>
+    <string name="tabla_carrito_detalle">CREATE TABLE carrito_detalle (id_auto_carrito integer primary key AUTOINCREMENT, id_referencia INT, tipo_product INT, valor_refe REAL, valor_directo REAL, serie TEXT, id_punto INT, id_paquete INT, estado_venta INT, tipo_venta INT)</string>
+    <string name="tabla_punto_local">CREATE TABLE punto_local (id_auto integer primary key AUTOINCREMENT, categoria INT, cedula TEXT, celular TEXT, ciudad INT, depto INT, email TEXT, estado_com INT, nombre_cliente TEXT, nombre_punto TEXT, telefono TEXT, territorio INT, texto_direccion TEXT, zona INT, latitud REAL, longitud REAL, tipo_documento INT, idusuario INT, barrio TEXT)</string>
+    <string name="tabla_no_venta">CREATE TABLE no_venta (id_auto integer primary key AUTOINCREMENT, idpos INT, motivo TEXT, observacion TEXT, latitud REAL, longitud REAL)</string>
+    <string name="tabla_trancing">CREATE TABLE tracing (id integer primary key AUTOINCREMENT, idUser INT, imei TEXT, dateTime TEXT, batteryLavel INT, temperatura INT, latitud REAL, longitud REAL, idDistri INT, dataBase TEXT, fechainicial TEXT, fechafinal TEXT )</string>
+    <string name="tabla_indicadoros_detalle">CREATE TABLE indicadoresdas_detalle (id_auto integer primary key AUTOINCREMENT, idpos INT, tipo_visita INT, stock_sim INT, stock_combo INT, stock_seguridad_sim INT, stock_seguridad_combo INT, dias_inve_sim REAL, dias_inve_combo REAL, id_vendedor INT, id_distri INT, fecha_dia TEXT, fecha_ult TEXT, hora_ult TEXT, orden INT)</string>
+
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nombre">Nombre</string>
+    <string name="direcci_n">Dirección</string>
+    <string name="title_activity_act_marcar_visita">Marcar Venta</string>
+    <string name="informaci_n_del_punto">Información del Punto</string>
+    <string name="idPos">ID POS</string>
+    <string name="raz_n_social">Razón Social</string>
+    <string name="circuito">Circuito</string>
+    <string name="ruta">Ruta</string>
+    <string name="departamento">Departamento</string>
+    <string name="pedidos_pendientes">Pedidos Pendientes</string>
+    <string name="venta">Venta</string>
+    <string name="no_venta">No Venta</string>
+    <string name="inventariar_productos">Inventariar Producto</string>
+    <string name="title_activity_act_no_venta">"No Venta "</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="aceptar">Guardar</string>
+    <string name="marcaci_n_de_visita">Marcar no Venta</string>
+    <string name="tipo_venta">Tipo de Venta</string>
+    <string name="tipo_dinamico">Tipo de Venta Simcard</string>
+    <string name="title_activity_act_tipo_venta">Tipo de Venta</string>
+    <string name="paquetes">Paquetes</string>
+    <string name="title_activity_act_tipo_venta_unida">Tipo Venta</string>
+    <string name="title_activity_act_tipo_equipo">Equipos</string>
+    <string name="title_activity_act_list_catalogo">Listas de Referencias</string>
+    <string name="title_activity_act_detalle_catalogo">Detalle Catalogo</string>
+    <string name="title_activity_act_detalle_serial">Detalle</string>
+    <string name="title_activity_act_carrito">Carrito</string>
+    <string name="total_a_pagar">Total a pagar: $</string>
+    <string name="finalizar_venta">Finalizar Venta</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="busqueda_avanzada">Busqueda Avanzada</string>
+    <string name="buscar">Buscar</string>
+    <string name="idpos">IDPOS</string>
+    <string name="consulta_punto">Consultar Punto</string>
+    <string name="title_activity_act_busqueda_av_punto">Busqueda Avanzada</string>
+    <string name="datos_personales">Datos Personales</string>
+    <string name="cedula">Cédula Responsable</string>
+    <string name="c_dula_del_responsable">Cédula del Responsable</string>
+    <string name="nombre_del_cliente">Nombre del cliente</string>
+    <string name="guardar">Guardar</string>
+    <string name="ciudad">Ciudad</string>
+    <string name="localizacion">Localización</string>
+    <string name="datos_ruta">Datos de la Ruta</string>
+    <string name="estado_comercial">Estado comercial</string>
+    <string name="categoria">Categoria</string>
+    <string name="tipo_via">Tipo de Vía</string>
+    <string name="separado">#</string>
+    <string name="separador2">-</string>
+    <string name="title_activity_act_resul_mi_rutero">Resultado</string>
+    <string name="mis_ventas">Mis Ventas</string>
+    <string name="fecha_inicial">Fecha Inicial</string>
+    <string name="fecha_final">Fecha Final</string>
+    <string name="planificaci_n_visitas">Planificar Visita</string>
+    <string name="planificaci_n">Planificación</string>
+    <string name="tipo">Tipo</string>
+    <string name="parametros_de_busqueda">Parametros de busqueda</string>
+    <string name="estado">Estado</string>
+    <string name="title_activity_act_detalle_solicitud_p">Detalle</string>
+    <string name="title_inventariar">Inventariar Producto</string>
+    <string name="title_bjas">Reporte mis bajas</string>
+    <string name="barrio">Barrio</string>
+    <string name="vendedor">Vendedor</string>
+    <string name="solicitud">Solicitud</string>
+    <string name="stock_23">stock</string>
+    <string name="title_activity_act_editar_punto">Editar Punto</string>
+    <string name="nombreIdPos">Nombre PDV</string>
+    <string name="correo">Correo</string>
+    <string name="title_activity_maps_puntos">Mapas</string>
+    <string name="title_activity_act_maps_punto">Map</string>
+    <!-- -->
+
+</resources>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grid_item_bg_pressed"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/spacing_large"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="@dimen/spacing_large"
+            android:layout_marginRight="@dimen/spacing_large"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/dimen_letra_app_titulo"
+                    android:text="Visitas"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pdv's  Visitados"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/dimen_letra_app_estandar"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="2dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:id="@+id/txtInicio"
+                        android:layout_gravity="right"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:id="@+id/txtPromedio"
+                        android:gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:textStyle="bold"
+                        android:id="@+id/txtFinal"
+                        android:gravity="right" />
+
+
+                </LinearLayout>
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:id="@+id/progressBar"
+                    android:max="100"
+                    android:progressDrawable="@drawable/progress"
+                    android:layout_gravity="center_horizontal" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="% CUMP. visitas día"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:textStyle="bold"
+                        android:id="@+id/txtPorCum"
+                        android:gravity="center_horizontal" />
+
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:text="Pdv's con pedido"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/dimen_letra_app_estandar"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/textView" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:textStyle="bold"
+                        android:id="@+id/txtIniciopedido"
+                        android:layout_gravity="right"
+                        android:gravity="left" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:textStyle="bold"
+                        android:id="@+id/txtPromediopedido"
+                        android:gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="0"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:id="@+id/txtFinalPedido"
+                        android:gravity="right" />
+
+
+                </LinearLayout>
+
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:id="@+id/progressBar2"
+                    android:progressDrawable="@drawable/progress"
+                    android:layout_gravity="center_horizontal" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Efectividad visitas"
+                        android:textStyle="bold"
+                        android:layout_weight="1"
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:textColor="@color/colorPrimary" />
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text=""
+                        android:textSize="@dimen/dimen_letra_app_estandar"
+                        android:textStyle="bold"
+                        android:id="@+id/txtPorEfec"
+                        android:gravity="center_horizontal" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+</ScrollView>
