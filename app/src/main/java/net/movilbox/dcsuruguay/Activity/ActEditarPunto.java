@@ -185,7 +185,7 @@ public class ActEditarPunto extends BaseActivity implements View.OnClickListener
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 tipoDocumento = entEstandars.get(position).getId();
                 if (tipoDocumento == 1) {
-                    int maxLength = 11;
+                    int maxLength = 16;
                     edit_cedula.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
                 } else {
                     int maxLength = 8;
