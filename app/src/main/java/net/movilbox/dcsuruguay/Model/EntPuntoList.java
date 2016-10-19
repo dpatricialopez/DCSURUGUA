@@ -67,6 +67,9 @@ public class EntPuntoList {
     @SerializedName("tipo_doc")
     private int tipo_doc;
 
+    @SerializedName("vende_recargas")
+    public int vende_recargas;
+
     public int getTipo_doc() {
         return tipo_doc;
     }
@@ -225,5 +228,12 @@ public class EntPuntoList {
 
     public void setDescripcion_otro(String descripcion_otro) {
         this.descripcion_otro = descripcion_otro;
+    }
+    public int getVende_recargas() {
+        return vende_recargas;
+    }
+
+    public void setVende_recargas(int vende_recargas) {
+        this.vende_recargas = vende_recargas;
     }
 }

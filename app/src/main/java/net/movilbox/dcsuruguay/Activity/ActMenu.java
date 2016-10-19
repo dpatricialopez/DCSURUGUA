@@ -54,7 +54,8 @@ import net.movilbox.dcsuruguay.R;
 import net.movilbox.dcsuruguay.Services.ConnectionDetector;
 import net.movilbox.dcsuruguay.Services.MonitoringService;
 import net.movilbox.dcsuruguay.Services.SetTracingServiceWeb;
-
+import static net.movilbox.dcsuruguay.Model.EntLoginR.getIndicador_refres;
+import static net.movilbox.dcsuruguay.Model.EntLoginR.setIndicador_refres;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -429,21 +430,28 @@ public class ActMenu extends BaseActivity implements NavigationView.OnNavigation
 
                     progressDialog.dismiss();
 
-                    if (controllerLogin.getUserLogin().getPerfil() == 2) {
-                        try {
+                    if (getIndicador_refres() == 1) {
+                        funcionesGenerales.updateFechaSincro(sincronizar.getFecha_sincroniza(), controllerLogin.getUserLogin().getId());
+                        setIndicador_refres(0);
+                        progressDialog.dismiss();
+                        if (controllerLogin.getUserLogin().getPerfil() == 2) {
+                            try {
 
-                            Class fragmentClass = FragmentInicioVendedor.class;
-                            Fragment fragment = (Fragment) fragmentClass.newInstance();
-                            fragmentManager.beginTransaction().replace(R.id.contentPanel, fragment, indicadorFragment).commit();
+                                Class fragmentClass = FragmentInicioVendedor.class;
+                                Fragment fragment = (Fragment) fragmentClass.newInstance();
+                                fragmentManager.beginTransaction().replace(R.id.contentPanel, fragment, indicadorFragment).commit();
 
-                        } catch (InstantiationException e) {
-                            e.printStackTrace();
-                        } catch (IllegalAccessException e) {
-                            e.printStackTrace();
+                            } catch (InstantiationException e) {
+                                e.printStackTrace();
+                            } catch (IllegalAccessException e) {
+                                e.printStackTrace();
+                            }
+
                         }
-
+                    } else {
+                        funcionesGenerales.updateFechaSincro(sincronizar.getFecha_sincroniza(), controllerLogin.getUserLogin().getId());
+                        progressDialog.dismiss();
                     }
-
                 }
 
             }).start();

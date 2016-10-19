@@ -9,9 +9,12 @@ import android.text.InputFilter;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.DefaultRetryPolicy;
@@ -60,7 +63,9 @@ public class ActEditarPunto extends BaseActivity implements View.OnClickListener
     private EditText edit_cel_edit;
     private EditText edit_a;
     private EditText edit_tel_barrio;
+    private Switch swVendeRecargas;
     public ProgressDialog progressDialog;
+    public int idVendeRecargas;
     private int idDepartamento;
     private int idCiudad;
     private int idEstadoCom;
@@ -69,7 +74,7 @@ public class ActEditarPunto extends BaseActivity implements View.OnClickListener
     private int idCategoria;
     private int idTipoVia;
     private int idOtra;
-    private EntLisSincronizar entLisSincronizar;
+    EntLisSincronizar entLisSincronizar;
     private LinearLayout numeroLayout;
     private int tipoDocumento;
     private Spinner spinnerTipoDocumento;
@@ -125,6 +130,15 @@ public class ActEditarPunto extends BaseActivity implements View.OnClickListener
         edit_tel_barrio = (EditText) findViewById(R.id.edit_tel_barrio);
         edit_tel_barrio.setText(entLisSincronizar.getBarrio());
 
+        swVendeRecargas = (Switch) findViewById(R.id.swVendeRecargas);
+        if(entLisSincronizar.getVende_recargas() == 0){
+            idVendeRecargas = 0;
+            swVendeRecargas.setChecked(false);
+        }else{
+            idVendeRecargas = 1;
+            swVendeRecargas.setChecked(true);
+        }
+
         FloatingActionButton guardarPrunto = (FloatingActionButton) findViewById(R.id.guarda_punto);
         guardarPrunto.setOnClickListener(this);
         //endregion
@@ -149,9 +163,24 @@ public class ActEditarPunto extends BaseActivity implements View.OnClickListener
         llenarCircuitoTerritorio(controllerTerritorio.getCircuito());
         llenarCategoria(controllerCategoria.getCategoria());
         loadSpinnerTipo();
+        switchStatus();
 
     }
+    private void switchStatus(){
+        swVendeRecargas.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
 
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    idVendeRecargas = 1;
+                }else{
+                    idVendeRecargas = 0;
+                }
+
+            }
+        });
+    }
     private void selectSpinnerValue(List<EntEstandar> ListaEstado, Spinner spinner, int id) {
         for (int i = 0; i < ListaEstado.size(); i++) {
             if (ListaEstado.get(i).getId() == id) {
@@ -345,9 +374,42 @@ public class ActEditarPunto extends BaseActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.guarda_punto:
-
+                boolean flat = true;
                 if (!validarCampos()) {
-                    editarPunto();
+                    if(entLisSincronizar.getNombre_punto().equals(edit_nombres.getText().toString())
+                            && entLisSincronizar.getCedula().equals(edit_cedula.getText().toString().trim())
+                            && entLisSincronizar.getNombre_cliente().equals(edit_nom_cli.getText().toString())
+                            && entLisSincronizar.getEmail().equals(edit_correo_edit.getText().toString())
+                            && entLisSincronizar.getTelefono().equals(edit_tel_edit.getText().toString())
+                            && entLisSincronizar.getTexto_direccion().equals(edit_a.getText().toString())
+                            && entLisSincronizar.getCelular().equals(edit_cel_edit.getText().toString())
+                            && idDepartamento == entLisSincronizar.getIdDepartameto()
+                            && idCiudad == entLisSincronizar.getIdCiudad()
+                            && idEstadoCom == entLisSincronizar.getEstado_com()
+                            && idRutaZona == entLisSincronizar.getZona()
+                            && idCategoria == entLisSincronizar.getCategoria()
+                            && tipoDocumento == entLisSincronizar.getTipo_documento()
+                            && idCircuito == entLisSincronizar.getTerritorio()
+                            && idVendeRecargas == entLisSincronizar.getVende_recargas()) {
+                        if(entLisSincronizar.getBarrio() != null){
+                            if (entLisSincronizar.getBarrio().equals(edit_tel_barrio.getText().toString())){
+                                flat = false;
+                            }
+                        }else{
+                            if (edit_tel_barrio.getText().toString().trim().equals("")){
+                                flat = false;
+                            }
+                        }
+
+                    }
+
+
+                    if(flat){
+                        editarPunto();
+                    }else {
+                        TastyToast.makeText(this, "No se ha modificado ningun elemento", TastyToast.LENGTH_LONG, TastyToast.WARNING);
+                    }
+
                 }
 
                 break;
@@ -395,8 +457,11 @@ public class ActEditarPunto extends BaseActivity implements View.OnClickListener
 
                 params.put("accion", "Editar");
 
-                params.put("latitud", String.valueOf(gpsServices.getLatitude()));
-                params.put("longitud", String.valueOf(gpsServices.getLongitude()));
+                //params.put("latitud", String.valueOf(gpsServices.getLatitude()));
+               // params.put("longitud", String.valueOf(gpsServices.getLongitude()));
+                //posición del punto
+                params.put("latitud", String.valueOf(entLisSincronizar.getLatitud()));
+                params.put("longitud", String.valueOf(entLisSincronizar.getLongitud()));
 
                 EntPuntoList entPuntoList = new EntPuntoList();
 
@@ -413,10 +478,12 @@ public class ActEditarPunto extends BaseActivity implements View.OnClickListener
                 entPuntoList.setZona(idRutaZona);
                 entPuntoList.setTerritorio(idCircuito);
                 entPuntoList.setCategoria(idCategoria);
-                entPuntoList.setTipo_via(idTipoVia);
+                entPuntoList.setTipo_via(idTipoVia);//no se usa
                 entPuntoList.setNumero_via(edit_a.getText().toString());
                 entPuntoList.setOtra_direccion(idOtra);
                 entPuntoList.setTipo_doc(tipoDocumento);
+                entPuntoList.setVende_recargas(idVendeRecargas);
+
 
                 String parJSON = new Gson().toJson(entPuntoList, EntPuntoList.class);
 

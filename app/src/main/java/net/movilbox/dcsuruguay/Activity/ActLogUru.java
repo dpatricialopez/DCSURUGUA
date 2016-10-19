@@ -28,6 +28,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -65,6 +66,7 @@ import net.movilbox.dcsuruguay.Controller.ControllerMunicipio;
 import net.movilbox.dcsuruguay.Controller.FuncionesGenerales;
 import net.movilbox.dcsuruguay.Model.EntLoginR;
 import net.movilbox.dcsuruguay.Model.TimeService;
+import static net.movilbox.dcsuruguay.Model.EntLoginR.setIndicador_refres;
 import net.movilbox.dcsuruguay.R;
 import net.movilbox.dcsuruguay.Services.ConnectionDetector;
 
@@ -127,7 +129,10 @@ public class ActLogUru extends BaseActivity implements View.OnClickListener, Goo
         controllerMunicipio = new ControllerMunicipio(this);
         controllerDireccion = new ControllerDireccion(this);
         controllerEstadoC = new ControllerEstadoC(this);
+        TextView txtVersion = (TextView) findViewById(R.id.txtVersion);
+        String versionNametext = BuildConfig.VERSION_NAME;
 
+        txtVersion.setText(String.format("Versión: %1$s", versionNametext));
         btnIngresar.setOnClickListener(this);
 
         connectionDetector = new ConnectionDetector(this);
@@ -500,6 +505,7 @@ public class ActLogUru extends BaseActivity implements View.OnClickListener, Goo
                             });
 
                         }
+                        setIndicador_refres(1);
 
                         controllerLogin.updateFechaSincroLogin(loginR.getFecha_sincroniza(), loginR.getId());
 
@@ -514,7 +520,7 @@ public class ActLogUru extends BaseActivity implements View.OnClickListener, Goo
                 }).start();
 
             } else {
-
+                setIndicador_refres(1);
                 controllerLogin.updateFechaSincroLogin(loginR.getFecha_sincroniza(), loginR.getId());
 
                 startActivity(new Intent(ActLogUru.this, ActMenu.class));

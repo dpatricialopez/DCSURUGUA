@@ -129,9 +129,9 @@ public class ControllerInventario {
         String sql = "";
 
         if (indicador == -1)
-            sql = "SELECT 0 paquete, 0 id_referencia, 0 tipo_pro,'SELECCIONAR' producto, 0 cantidad UNION SELECT inv.paquete,inv.id_referencia,inv.tipo_pro,rs.producto,count(inv.id) cantidad FROM inventario inv INNER JOIN refes_sims rs ON rs.id = inv.id_referencia WHERE inv.paquete = ? GROUP BY inv.id_referencia";
+            sql = "SELECT 0 paquete, 0 id_referencia, 0 tipo_pro,'SELECCIONAR' producto, 0 cantidad,0 precio_publico  UNION SELECT inv.paquete,inv.id_referencia,inv.tipo_pro,rs.producto,count(inv.id) cantidad,rs.precio_publico FROM inventario inv INNER JOIN refes_sims rs ON rs.id = inv.id_referencia WHERE inv.paquete = ? GROUP BY inv.id_referencia";
         else
-            sql = "SELECT inv.paquete,inv.id_referencia,inv.tipo_pro,rs.producto,count(inv.id) cantidad FROM inventario inv INNER JOIN refes_sims rs ON rs.id = inv.id_referencia WHERE inv.paquete = ? GROUP BY inv.id_referencia";
+            sql = "SELECT inv.paquete,inv.id_referencia,inv.tipo_pro,rs.producto,count(inv.id) cantidad,rs.precio_publico FROM inventario inv INNER JOIN refes_sims rs ON rs.id = inv.id_referencia WHERE inv.paquete = ? GROUP BY inv.id_referencia";
 
         Cursor cursor = database.rawQuery(sql, new String[]{String.valueOf(indicador)});
 
@@ -146,7 +146,7 @@ public class ControllerInventario {
                 referencias.setTipoPro(cursor.getInt(2));
                 referencias.setNomPro(cursor.getString(3));
                 referencias.setCantidad(cursor.getInt(4));
-
+                referencias.setPrecio_publico(cursor.getInt(5));
                 referenciaList.add(referencias);
 
             } while (cursor.moveToNext());
@@ -348,21 +348,25 @@ public class ControllerInventario {
         return referenciaList;
     }
 
-    public double getValorReferencia(int idRefencia, int valorInt) {
 
+    public double getValorReferencia(int idRefencia, int valorInt,int idZona) {
+        //se debe poner condicion para la vneta directa porque no tiene zona
         double valorReferencia = 0.0;
         String sql = "";
+        Cursor cursor = null;
 
         if (valorInt == 1) {
             // Valor directo
-            sql = "SELECT valor_directo FROM lista_precios WHERE id_referencia = ? GROUP BY id_referencia";
+            sql = "SELECT valor_directo FROM lista_precios WHERE id_referencia = ? GROUP BY id_referencia ";
+            cursor = database.rawQuery(sql, new String[]{String.valueOf(idRefencia)});
         } else if (valorInt == 2) {
             // Valor Referencia
-            sql = "SELECT valor_referencia FROM lista_precios WHERE id_referencia = ? GROUP BY id_referencia";
+            sql = "SELECT valor_referencia FROM lista_precios WHERE id_referencia = ? AND idpos = ? ";
+            cursor = database.rawQuery(sql, new String[]{String.valueOf(idRefencia),String.valueOf(idZona)});
         }
 
 
-        Cursor cursor = database.rawQuery(sql, new String[]{String.valueOf(idRefencia)});
+
 
         if (cursor.moveToFirst()) {
             valorReferencia = cursor.getDouble(0);

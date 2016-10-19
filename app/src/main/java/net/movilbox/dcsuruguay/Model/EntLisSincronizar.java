@@ -196,6 +196,9 @@ public class EntLisSincronizar extends EntCatalogo implements Serializable {
     @SerializedName("tipo_documento")
     private int tipo_documento;
 
+    @SerializedName("vende_recargas")
+    private int vende_recargas;
+
     private int idDepartameto;
 
     private int idCiudad;
@@ -718,5 +721,13 @@ public class EntLisSincronizar extends EntCatalogo implements Serializable {
 
     public void setNombre_cli(String nombre_cli) {
         this.nombre_cli = nombre_cli;
+    }
+
+    public int getVende_recargas() {
+        return vende_recargas;
+    }
+
+    public void setVende_recargas(int vende_recargas) {
+        this.vende_recargas = vende_recargas;
     }
 }

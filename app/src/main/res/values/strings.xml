@@ -8,17 +8,16 @@
     <string name="title_activity_act_menu">Menú Inicio</string>
 
     <!-- URL BASE DESARROLLO -->
-    <!--  <string name="url_base">http://192.168.2.24:92/app/servicios/services.php?solicitud=</string>-->
-    <!--  <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_peru/distribuidor/modulos/login/controlador.php</string>-->
+      <!--<string name="url_base">http://192.168.2.24:92/app/servicios/services.php?solicitud=</string>
+      <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_peru/distribuidor/modulos/login/controlador.php</string>-->
 
     <!-- URL BASE PRUEBAS -->
-   <string name="url_base">http://prueba.movilbox.net:88/movistar_uruguay/app_mbox/servicios/services.php?solicitud=</string>
-   <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_uruguay/distribuidor/modulos/login/controlador.php</string>
+    <string name="url_base">http://prueba.movilbox.net:88/movistar_uruguay/app_mbox/servicios/services.php?solicitud=</string>
+    <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_uruguay/distribuidor/modulos/login/controlador.php</string>
 
     <!-- URL BASE PRODUCCION -->
-    <!-- <string name="url_base">https://uruguay.movilbox.net/app/servicios/services.php?solicitud=</string> -->
-    <!-- <string name="url_base_correo">https://uruguay.movilbox.net/distribuidor/modulos/login/controlador.php</string> -->
-    <!-- -->
+    <!-- <string name="url_base">https://uruguay.movilbox.net/app/servicios/services.php?solicitud=</string>
+    <string name="url_base_correo">https://uruguay.movilbox.net/distribuidor/modulos/login/controlador.php</string>-->
 
     <!-- QUERY DATA BASE -->
     <string name="tabla_login">CREATE TABLE login (id INT, cedula INT, nombre TEXT, apellido TEXT, user TEXT, estado INT, bd TEXT, id_distri TEXT, perfil INT, igv REAL, intervalo INT, hora_inicial TEXT, hora_final TEXT, cantidad_envios INT, fechaSincro TEXT, fechaSincroOffline TEXT, password TEXT)</string>
@@ -29,7 +28,7 @@
     <string name="tabla_estado_comercial">CREATE TABLE estado_comercial (id INT, descripcion TEXT, estado_accion INT)</string>
     <string name="tabla_territorio">CREATE TABLE territorio (id INT, descripcion TEXT, tipo_tabla INT)</string>
     <string name="tabla_zona">CREATE TABLE zona (id INT, descripcion TEXT, id_territorio INT, tipo_tabla INT)</string>
-    <string name="tabla_punto">CREATE TABLE punto (id_auto integer primary key AUTOINCREMENT, categoria INT, cedula TEXT, celular TEXT, ciudad INT, depto INT, email TEXT, estado_com INT, idpos INT, nombre_cliente TEXT, nombre_punto TEXT, telefono TEXT, territorio INT, texto_direccion TEXT, zona INT, latitud REAL, longitud REAL, estado_visita INT, detalle TEXT, tipo_tabla INT, accion TEXT, dato_otro TEXT, otro INT, tipo_documento INT, barrio TEXT)</string>
+    <string name="tabla_punto">CREATE TABLE punto (id_auto integer primary key AUTOINCREMENT, categoria INT, cedula TEXT, celular TEXT, ciudad INT, depto INT, email TEXT, estado_com INT, idpos INT, nombre_cliente TEXT, nombre_punto TEXT, telefono TEXT, territorio INT, texto_direccion TEXT, zona INT, latitud REAL, longitud REAL, estado_visita INT, detalle TEXT, tipo_tabla INT, accion TEXT, dato_otro TEXT, otro INT, tipo_documento INT, barrio TEXT,vende_recargas INT)</string>
     <string name="tabla_refes_sims">CREATE TABLE refes_sims (id INT, pn TEXT, producto TEXT, precio_referencia REAL, precio_publico REAL, estado_accion INT, tipo_tabla INT)</string>
     <string name="tabla_catalogo">CREATE TABLE catalogo (id INT, descripcion TEXT, precioventa REAL, speech TEXT, pantalla TEXT, cam_frontal TEXT, cam_tras TEXT, flash TEXT, banda TEXT, memoria TEXT, expandible TEXT, bateria TEXT, bluetooth TEXT, tactil TEXT, tec_fisico TEXT, carrito_compras TEXT, correo TEXT, enrutador TEXT, radio TEXT, wifi TEXT, gps TEXT, so TEXT, web TEXT, img_pri_catalogo TEXT, tipo_tabla INT)</string>
     <string name="tabla_img_catalogo">CREATE TABLE img_catalogo (id_auto integer primary key AUTOINCREMENT, url TEXT, id_catalogo INT)</string>
@@ -37,7 +36,7 @@
     <string name="tabla_lista_precio">CREATE TABLE lista_precios (id_referencia INT, idpos INT, valor_referencia REAl, valor_directo REAL, tipo_pro INT, estado_accion INT, tipo_tabla INT )</string>
     <string name="tabla_inventario">CREATE TABLE inventario (id INT, id_referencia INT, serie TEXT, paquete INT, id_vendedor INT, distri INT, tipo_pro INT, tipo_tabla INT, estado_accion INT, accion TEXT )</string>
     <string name="tabla_carrito_detalle">CREATE TABLE carrito_detalle (id_auto_carrito integer primary key AUTOINCREMENT, id_referencia INT, tipo_product INT, valor_refe REAL, valor_directo REAL, serie TEXT, id_punto INT, id_paquete INT, estado_venta INT, tipo_venta INT)</string>
-    <string name="tabla_punto_local">CREATE TABLE punto_local (id_auto integer primary key AUTOINCREMENT, categoria INT, cedula TEXT, celular TEXT, ciudad INT, depto INT, email TEXT, estado_com INT, nombre_cliente TEXT, nombre_punto TEXT, telefono TEXT, territorio INT, texto_direccion TEXT, zona INT, latitud REAL, longitud REAL, tipo_documento INT, idusuario INT, barrio TEXT)</string>
+    <string name="tabla_punto_local">CREATE TABLE punto_local (id_auto integer primary key AUTOINCREMENT, categoria INT, cedula TEXT, celular TEXT, ciudad INT, depto INT, email TEXT, estado_com INT, nombre_cliente TEXT, nombre_punto TEXT, telefono TEXT, territorio INT, texto_direccion TEXT, zona INT, latitud REAL, longitud REAL, tipo_documento INT, idusuario INT, barrio TEXT,vende_recargas INT)</string>
     <string name="tabla_no_venta">CREATE TABLE no_venta (id_auto integer primary key AUTOINCREMENT, idpos INT, motivo TEXT, observacion TEXT, latitud REAL, longitud REAL)</string>
     <string name="tabla_trancing">CREATE TABLE tracing (id integer primary key AUTOINCREMENT, idUser INT, imei TEXT, dateTime TEXT, batteryLavel INT, temperatura INT, latitud REAL, longitud REAL, idDistri INT, dataBase TEXT, fechainicial TEXT, fechafinal TEXT )</string>
     <string name="tabla_indicadoros_detalle">CREATE TABLE indicadoresdas_detalle (id_auto integer primary key AUTOINCREMENT, idpos INT, tipo_visita INT, stock_sim INT, stock_combo INT, stock_seguridad_sim INT, stock_seguridad_combo INT, dias_inve_sim REAL, dias_inve_combo REAL, id_vendedor INT, id_distri INT, fecha_dia TEXT, fecha_ult TEXT, hora_ult TEXT, orden INT)</string>

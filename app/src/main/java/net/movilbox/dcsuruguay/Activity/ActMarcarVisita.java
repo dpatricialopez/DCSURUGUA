@@ -115,8 +115,38 @@ public class ActMarcarVisita extends BaseActivity implements View.OnClickListene
 
             return true;
         }
+        else if (id == R.id.action_geo)
+        {
+            guardarLocation();
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void guardarLocation() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setTitle("Pedidos PDV");
+        builder.setMessage("¿Desea Actualizar la geolocalización del pdv con su posicion actual?").setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+
+                Bundle bundle = new Bundle();
+                Intent intent = new Intent(ActMarcarVisita.this, ActMapActualizar.class);
+                bundle.putSerializable("value", entLisSincronizar);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        }).setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+
+        builder.show();
+
     }
 
     private void llenarInformacionPunto(EntLisSincronizar entLisSincronizar) {

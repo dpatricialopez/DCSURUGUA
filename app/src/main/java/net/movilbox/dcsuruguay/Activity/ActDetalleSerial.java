@@ -93,12 +93,12 @@ public class ActDetalleSerial extends BaseActivity {
                         entCarritoVenta.setTipoProducto(refeSerials.get(i).getTipo_pro());
 
                         if (valorRefencia == 0.0)
-                            entCarritoVenta.setValorRefe(controllerInventario.getValorReferencia(refeSerials.get(i).getId_referencia(), 2));
+                            entCarritoVenta.setValorRefe(controllerInventario.getValorReferencia(refeSerials.get(i).getId_referencia(), 2, entLisSincronizar.getZona()));
                         else
                             entCarritoVenta.setValorRefe(valorRefencia);
 
                         if (valorDirecto == 0.0)
-                            entCarritoVenta.setValorDirecto(controllerInventario.getValorReferencia(refeSerials.get(i).getId_referencia(), 1));
+                            entCarritoVenta.setValorDirecto(controllerInventario.getValorReferencia(refeSerials.get(i).getId_referencia(), 1, entLisSincronizar.getZona()));
                         else
                             entCarritoVenta.setValorDirecto(valorDirecto);
 

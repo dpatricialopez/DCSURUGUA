@@ -15,9 +15,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Switch;
 
 import com.android.volley.Request;
 import com.android.volley.Response;
@@ -73,6 +75,8 @@ public class FragmentCrearPunto extends BaseVolleyFragment implements View.OnCli
     private EditText edit_cel_edit;
     private EditText edit_a;
     private EditText edit_tel_barrio;
+    private Switch swVendeRecargas;
+     int venta_recarga = 2;
     public ProgressDialog progressDialog;
     private int idDepartamento;
     private int idCiudad;
@@ -118,6 +122,7 @@ public class FragmentCrearPunto extends BaseVolleyFragment implements View.OnCli
         edit_cel_edit = (EditText) view.findViewById(R.id.edit_cel_edit);
         edit_a = (EditText) view.findViewById(R.id.edit_a);
         edit_tel_barrio = (EditText) view.findViewById(R.id.edit_tel_barrio);
+        swVendeRecargas = (Switch) view.findViewById(R.id.swVendeRecargas);
         //endregion
 
         controllerDepartamento = new ControllerDepartamento(getActivity());
@@ -165,6 +170,18 @@ public class FragmentCrearPunto extends BaseVolleyFragment implements View.OnCli
 
         loadSpinnerTipo();
 
+       /* swVendeRecargas.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    venta_recarga = 1;
+
+                } else {
+                    venta_recarga = 2;
+                }
+            }
+        });*/
+
     }
 
     //region Llenar Spinner Tipo de documento.
@@ -184,7 +201,7 @@ public class FragmentCrearPunto extends BaseVolleyFragment implements View.OnCli
                 edit_cedula.setHint("");
                 edit_cedula.setText("");
                 if (tipoDocumento == 1) {
-                    int maxLength = 11;
+                    int maxLength = 16;
                     edit_cedula.setFilters(new InputFilter[]{new InputFilter.LengthFilter(maxLength)});
                     edit_cedula.setHint("Ruc");
                 } else {
@@ -378,6 +395,11 @@ public class FragmentCrearPunto extends BaseVolleyFragment implements View.OnCli
         entLisSincronizar.setTipo_documento(tipoDocumento);
         entLisSincronizar.setLatitud(gpsServices.getLatitude());
         entLisSincronizar.setLongitud(gpsServices.getLongitude());
+        if(swVendeRecargas.isChecked()){
+            entLisSincronizar.setVende_recargas(1);
+        }else{
+            entLisSincronizar.setVende_recargas(0);
+        }
 
         if (controllerPunto.insertPuntoLocal(entLisSincronizar, controllerLogin.getUserLogin().getId())) {
             TastyToast.makeText(getActivity(), "Punto guardado local sincronizar para ver los cambios", TastyToast.LENGTH_LONG, TastyToast.SUCCESS);
@@ -533,6 +555,12 @@ public class FragmentCrearPunto extends BaseVolleyFragment implements View.OnCli
                 entPuntoList.setCategoria(idCategoria);
                 entPuntoList.setNumero_via(edit_a.getText().toString());
                 entPuntoList.setTipo_doc(tipoDocumento);
+                if(swVendeRecargas.isChecked()){
+                    entPuntoList.setVende_recargas(1);
+                }else{
+                    entPuntoList.setVende_recargas(0);
+                }
+
 
                 String parJSON = new Gson().toJson(entPuntoList, EntPuntoList.class);
 

@@ -36,6 +36,8 @@ public class FragmentDasboardVendedor extends BaseVolleyFragment {
     }
 
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
@@ -86,35 +88,34 @@ public class FragmentDasboardVendedor extends BaseVolleyFragment {
 
                     if (puntoIndicadoList.get(mProgressStatus).getTipo_visita() == 1)
                         totalConPedido++;
-
-                    // Update the progress bar
-                    mHandler.post(new Runnable() {
-                        public void run() {
-                            //Visitas
-                            // Progress 1
-                            float promedio = (float) visitasTotal / (float) puntoIndicadoList.size();
-                            promedio = promedio * 100;
-                            mProgress1.setProgress((int) promedio);
-                            txtPromedio.setText(String.format("%1$s", visitasTotal));
-
-                            // Progress 2
-                            txtFinalPedido.setText(String.format("%1$s", visitasTotal));
-                            txtPromediopedido.setText(String.format("%1$s", totalConPedido));
-                            float promedio2 = (float) totalConPedido / (float) visitasTotal;
-
-                            promedio2 = promedio2 * 100;
-
-                            mProgress2.setProgress((int) promedio2);
-
-                            txtPorCum.setText((int) promedio + "%");
-                            txtPorEfec.setText((int) promedio2 + "%");
-
-                        }
-                    });
-
                     mProgressStatus++;
 
                 }
+                // Update the progress bar
+                mHandler.post(new Runnable() {
+                    public void run() {
+                        //Visitas
+                        // Progress 1
+                        float promedio = (float) visitasTotal / (float) puntoIndicadoList.size();
+                        promedio = promedio * 100;
+                        mProgress1.setProgress((int) promedio);
+                        txtPromedio.setText(String.format("%1$s", visitasTotal));
+
+                        // Progress 2
+                        txtFinalPedido.setText(String.format("%1$s", visitasTotal));
+                        txtPromediopedido.setText(String.format("%1$s", totalConPedido));
+                        float promedio2 = (float) totalConPedido / (float) visitasTotal;
+
+                        promedio2 = promedio2 * 100;
+
+                        mProgress2.setProgress((int) promedio2);
+
+                        txtPorCum.setText((int) promedio + "%");
+                        txtPorEfec.setText((int) promedio2 + "%");
+                        }
+                    });
+
+
             }
         }).start();
 

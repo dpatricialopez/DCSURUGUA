@@ -14,8 +14,11 @@ import com.sdsmdg.tastytoast.TastyToast;
 
 import net.movilbox.dcsuruguay.Controller.ControllerCarrito;
 import net.movilbox.dcsuruguay.Controller.ControllerInventario;
+import net.movilbox.dcsuruguay.Controller.ControllerLogin;
 import net.movilbox.dcsuruguay.Model.EntCarritoVenta;
+import net.movilbox.dcsuruguay.Model.EntLisSincronizar;
 import net.movilbox.dcsuruguay.Model.EntListReferencias;
+import net.movilbox.dcsuruguay.Model.EntLoginR;
 import net.movilbox.dcsuruguay.Model.EntRefeSerial;
 import net.movilbox.dcsuruguay.Model.Motivos;
 import net.movilbox.dcsuruguay.R;
@@ -34,7 +37,8 @@ public class FragmentSimcard extends BaseVolleyFragment implements View.OnClickL
     private int idReferencia;
     private String idSerie;
     private int tipoProducto;
-
+    private int precio_publico;
+    private EntLisSincronizar lisSincronizarList;
     public FragmentSimcard() {
         // Required empty public constructor
     }
@@ -54,7 +58,7 @@ public class FragmentSimcard extends BaseVolleyFragment implements View.OnClickL
 
         controllerInventario = new ControllerInventario(getActivity());
         controllerCarrito = new ControllerCarrito(getActivity());
-
+        controllerLogin = new ControllerLogin(getActivity());
         return view;
 
     }
@@ -72,7 +76,6 @@ public class FragmentSimcard extends BaseVolleyFragment implements View.OnClickL
 
 
     private void cargarPaqueteDesmas(final List<Motivos> motivos) {
-
         ArrayAdapter<Motivos> prec3 = new ArrayAdapter<>(getActivity(), R.layout.textview_spinner, motivos);
         spinner_paquete.setAdapter(prec3);
         spinner_paquete.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -99,6 +102,7 @@ public class FragmentSimcard extends BaseVolleyFragment implements View.OnClickL
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 idReferencia = listReferenciases.get(position).getIdRefe();
                 tipoProducto = listReferenciases.get(position).getTipoPro();
+                precio_publico = listReferenciases.get(position).getPrecio_publico();
                 cargarReferenciasSerial(listReferenciases.get(position).getIdPaquete(), listReferenciases.get(position).getIdRefe(), listReferenciases.get(position).getTipoPro());
 
             }
@@ -151,7 +155,7 @@ public class FragmentSimcard extends BaseVolleyFragment implements View.OnClickL
 
                     entCarritoVenta.setIdReferencia(idReferencia);
                     entCarritoVenta.setTipoProducto(tipoProducto);
-                    entCarritoVenta.setValorDirecto(controllerInventario.getValorReferencia(idReferencia, 1));
+                    entCarritoVenta.setValorDirecto(precio_publico);
                     entCarritoVenta.setSerie(idSerie);
                     entCarritoVenta.setIdPunto(1);
                     entCarritoVenta.setIdPaquete(idpaquete);

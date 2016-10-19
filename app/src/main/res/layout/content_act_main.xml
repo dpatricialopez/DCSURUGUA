@@ -63,5 +63,14 @@
         </LinearLayout>
 
     </ScrollView>
-
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="9sp"
+        android:text="Versión 1.2.0"
+        android:id="@+id/txtVersion"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 </RelativeLayout>

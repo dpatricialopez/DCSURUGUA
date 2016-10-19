@@ -329,6 +329,19 @@
                         </android.support.design.widget.TextInputLayout>
 
                     </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="18dp">
+                        <Switch
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:text="Vende recargas"
+                            android:id="@+id/swVendeRecargas" />
+                    </RelativeLayout>
 
                 </LinearLayout>
 
@@ -604,13 +617,13 @@
             <android.support.v7.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="@dimen/spacing_large"
                 android:layout_marginRight="@dimen/spacing_large"
                 app:cardBackgroundColor="@android:color/white"
                 app:cardCornerRadius="4dp"
                 app:cardElevation="4dp"
-                app:contentPaddingBottom="16dp"
+                app:contentPaddingBottom="60dp"
                 app:contentPaddingLeft="16dp"
                 app:contentPaddingRight="16dp"
                 app:contentPaddingTop="16dp">

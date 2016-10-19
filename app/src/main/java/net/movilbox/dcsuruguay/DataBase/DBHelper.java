@@ -13,7 +13,7 @@ import net.movilbox.dcsuruguay.R;
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "DCSCOLOMBIA.db";
-    private static final int DATABASE_VERSION = 12;
+    private static final int DATABASE_VERSION = 14;
     private Context context;
 
     public DBHelper(Context context) {

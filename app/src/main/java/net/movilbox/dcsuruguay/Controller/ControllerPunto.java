@@ -66,6 +66,7 @@ public class ControllerPunto {
             values.put("otro", data.getOtro());
             values.put("tipo_documento", data.getTipo_documento());
             values.put("barrio", data.getBarrio());
+            values.put("vende_recargas", data.getVende_recargas());
 
             database.insert("punto", null, values);
 
@@ -84,7 +85,7 @@ public class ControllerPunto {
         Cursor cursor;
         if (vendedor != 0) {
             sql = "SELECT pun.categoria, pun.cedula, pun.celular, mun.descripcion, det.descripcion AS departamento, pun.email, pun.idpos, pun.nombre_cliente, pun.nombre_punto, pun.telefono, ter.descripcion, zon.descripcion, pun.latitud, pun.longitud, pun.detalle, pun.texto_direccion, " +
-                    "       ind.tipo_visita,pun.zona, pun.territorio, pun.dato_otro, pun.otro, ind.stock_sim, ind.stock_combo, ind.stock_seguridad_sim, ind.stock_seguridad_combo, ind.dias_inve_sim, ind.dias_inve_combo, tipo_documento" +
+                    "       ind.tipo_visita,pun.zona, pun.territorio, pun.dato_otro, pun.otro, ind.stock_sim, ind.stock_combo, ind.stock_seguridad_sim, ind.stock_seguridad_combo, ind.dias_inve_sim, ind.dias_inve_combo, tipo_documento,pun.vende_recargas" +
                     " FROM punto AS pun, departamento AS det, municipios AS mun, territorio AS ter, zona AS zon, indicadoresdas_detalle  AS ind \n" +
                     " WHERE " +
                     "  pun.depto = det.id AND " +
@@ -96,7 +97,7 @@ public class ControllerPunto {
             cursor = database.rawQuery(sql, new String[]{String.valueOf(vendedor)});
         } else {
             sql = "SELECT pun.categoria, pun.cedula, pun.celular, mun.descripcion, det.descripcion AS departamento, pun.email, pun.idpos, pun.nombre_cliente, pun.nombre_punto, pun.telefono, ter.descripcion, zon.descripcion, pun.latitud, pun.longitud, pun.detalle, pun.texto_direccion, " +
-                    "       ind.tipo_visita,pun.zona, pun.territorio, pun.dato_otro, pun.otro, ind.stock_sim, ind.stock_combo, ind.stock_seguridad_sim, ind.stock_seguridad_combo, ind.dias_inve_sim, ind.dias_inve_combo, tipo_documento" +
+                    "       ind.tipo_visita,pun.zona, pun.territorio, pun.dato_otro, pun.otro, ind.stock_sim, ind.stock_combo, ind.stock_seguridad_sim, ind.stock_seguridad_combo, ind.dias_inve_sim, ind.dias_inve_combo, tipo_documento,pun.vende_recargas" +
                     " FROM punto AS pun, departamento AS det, municipios AS mun, territorio AS ter, zona AS zon, indicadoresdas_detalle  AS ind \n" +
                     " WHERE " +
                     "  pun.depto = det.id AND " +
@@ -145,6 +146,7 @@ public class ControllerPunto {
                 entRutero.setDias_inve_combo(cursor.getDouble(26));
 
                 entRutero.setTipo_documento(cursor.getInt(27));
+                entRutero.setVende_recargas(cursor.getInt(28));
 
                 ruteroArrayList.add(entRutero);
 
@@ -161,7 +163,7 @@ public class ControllerPunto {
         EntLisSincronizar  entRutero = null;
 
         String sql = "SELECT pun.categoria, pun.cedula, pun.celular, mun.descripcion, det.descripcion AS departamento, pun.email, pun.idpos, pun.nombre_cliente, pun.nombre_punto, pun.telefono, ter.descripcion, zon.descripcion, pun.latitud, pun.longitud, pun.detalle, pun.texto_direccion, " +
-                "            ind.tipo_visita, pun.zona, pun.territorio, pun.depto AS iddepartamento, pun.ciudad AS idciudad, pun.barrio AS barrio, pun.estado_com, tipo_documento " +
+                "            ind.tipo_visita, pun.zona, pun.territorio, pun.depto AS iddepartamento, pun.ciudad AS idciudad, pun.barrio AS barrio, pun.estado_com, tipo_documento,pun.vende_recargas " +
                 " FROM punto AS pun, departamento AS det, municipios AS mun, territorio AS ter, zona AS zon, indicadoresdas_detalle  AS ind \n" +
                 " WHERE " +
                 "  pun.depto = det.id AND " +
@@ -199,6 +201,7 @@ public class ControllerPunto {
             entRutero.setBarrio(cursor.getString(21));
             entRutero.setEstado_com(cursor.getInt(22));
             entRutero.setTipo_documento(cursor.getInt(23));
+            entRutero.setVende_recargas(cursor.getInt(24));
         }
 
         return entRutero;
@@ -323,6 +326,7 @@ public class ControllerPunto {
             values.put("tipo_documento", data.getTipo_documento());
             values.put("idusuario", idusuario);
             values.put("barrio", data.getBarrio());
+            values.put("vende_recargas", data.getVende_recargas());
 
             database.insert("punto_local", null, values);
 
@@ -338,7 +342,7 @@ public class ControllerPunto {
         List<EntLisSincronizar> sincronizarPedidosArrayList = new ArrayList<>();
 
         String[] args = new String[] {String.valueOf(idUsuario)};
-        String sql = "SELECT categoria, cedula, celular, ciudad, depto, nombre_punto, nombre_cliente, email, telefono, estado_com, zona, territorio, texto_direccion, tipo_documento, latitud, longitud, barrio FROM punto_local WHERE idusuario = ?";
+        String sql = "SELECT categoria, cedula, celular, ciudad, depto, nombre_punto, nombre_cliente, email, telefono, estado_com, zona, territorio, texto_direccion, tipo_documento, latitud, longitud, barrio, vende_recargas FROM punto_local WHERE idusuario = ?";
 
         Cursor cursor = database.rawQuery(sql, args);
         EntLisSincronizar entLisSincronizar;
@@ -367,6 +371,7 @@ public class ControllerPunto {
                 entLisSincronizar.setLatitud(cursor.getDouble(14));
                 entLisSincronizar.setLongitud(cursor.getDouble(15));
                 entLisSincronizar.setBarrio(cursor.getString(16));
+                entLisSincronizar.setVende_recargas(cursor.getInt(17));
 
                 sincronizarPedidosArrayList.add(entLisSincronizar);
 

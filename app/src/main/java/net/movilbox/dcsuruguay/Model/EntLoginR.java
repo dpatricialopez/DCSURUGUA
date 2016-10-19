@@ -65,6 +65,16 @@ public class EntLoginR {
     @SerializedName("datos_generales")
     private List<EntEstandar> datosGenerales;
 
+    public static int indicador_refres;
+
+    public static int getIndicador_refres() {
+        return indicador_refres;
+    }
+
+    public static void setIndicador_refres(int indicador_refres) {
+        EntLoginR.indicador_refres = indicador_refres;
+    }
+
     public int getId() {
         return id;
     }

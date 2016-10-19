@@ -12,7 +12,7 @@ public class EntListReferencias {
     private int tipoPro;
     private String nomPro;
     private int cantidad;
-
+    private int precio_publico;
     private List<EntEstandar> entEstandarList;
 
     public List<EntEstandar> getEntEstandarList() {
@@ -63,6 +63,13 @@ public class EntListReferencias {
         this.nomPro = nomPro;
     }
 
+    public int getPrecio_publico() {
+        return precio_publico;
+    }
+
+    public void setPrecio_publico(int precio_publico) {
+        this.precio_publico = precio_publico;
+    }
     @Override
     public String toString() {
 

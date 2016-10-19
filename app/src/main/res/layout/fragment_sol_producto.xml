@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grid_item_bg_pressed"
-    tools:context="net.movilbox.dcscolombia.Fragment.FragmentSolProducto">
+    tools:context="net.movilbox.dcsuruguay.Fragment.FragmentSolProducto">
 
     <LinearLayout
         android:orientation="vertical"

@@ -106,9 +106,9 @@ public class ActTipoVentaUnida extends BaseActivity {
                             entCarritoVenta.setTipoProducto(refeSerials.get(i).getTipo_pro());
 
 
-                            entCarritoVenta.setValorRefe(controllerInventario.getValorReferencia(refeSerials.get(i).getId_referencia(), 2));
+                            entCarritoVenta.setValorRefe(controllerInventario.getValorReferencia(refeSerials.get(i).getId_referencia(), 2, entLisSincronizar.getZona()));
 
-                            entCarritoVenta.setValorDirecto(controllerInventario.getValorReferencia(refeSerials.get(i).getId_referencia(), 1));
+                            entCarritoVenta.setValorDirecto(controllerInventario.getValorReferencia(refeSerials.get(i).getId_referencia(), 1,entLisSincronizar.getZona()));
 
                             entCarritoVenta.setSerie(refeSerials.get(i).getSerie());
 

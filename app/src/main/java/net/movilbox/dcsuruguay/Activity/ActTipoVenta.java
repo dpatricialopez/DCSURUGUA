@@ -106,9 +106,9 @@ public class ActTipoVenta extends BaseActivity {
                         entCarritoVenta.setTipoProducto(listReferenciases.get(i).getTipo_pro());
 
 
-                        entCarritoVenta.setValorRefe(controllerInventario.getValorReferencia(listReferenciases.get(i).getId_referencia(), 2));
+                        entCarritoVenta.setValorRefe(controllerInventario.getValorReferencia(listReferenciases.get(i).getId_referencia(), 2, entLisSincronizar.getZona()));
 
-                        entCarritoVenta.setValorDirecto(controllerInventario.getValorReferencia(listReferenciases.get(i).getId_referencia(), 1));
+                        entCarritoVenta.setValorDirecto(controllerInventario.getValorReferencia(listReferenciases.get(i).getId_referencia(), 1, entLisSincronizar.getZona()));
 
                         entCarritoVenta.setSerie(listReferenciases.get(i).getSerie());
 
