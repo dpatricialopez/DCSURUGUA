@@ -280,7 +280,7 @@
                                 android:layout_height="match_parent"
                                 android:hint="Teléfono"
                                 android:inputType="number"
-                                android:maxLength="13"
+                                android:maxLength="9"
                                 android:textSize="@dimen/dimen_letra_app_estandar" />
 
                         </android.support.design.widget.TextInputLayout>

@@ -8,12 +8,12 @@
     <string name="title_activity_act_menu">Menú Inicio</string>
 
     <!-- URL BASE DESARROLLO -->
-      <!--<string name="url_base">http://192.168.2.24:92/app/servicios/services.php?solicitud=</string>
-      <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_peru/distribuidor/modulos/login/controlador.php</string>-->
+      <string name="url_base">http://192.168.2.24:92/app_mbox/servicios/services.php?solicitud=</string>
+      <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_peru/distribuidor/modulos/login/controlador.php</string>
 
     <!-- URL BASE PRUEBAS -->
-    <string name="url_base">http://prueba.movilbox.net:88/movistar_uruguay/app_mbox/servicios/services.php?solicitud=</string>
-    <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_uruguay/distribuidor/modulos/login/controlador.php</string>
+    <!--<string name="url_base">http://prueba.movilbox.net:88/movistar_uruguay/app_mbox/servicios/services.php?solicitud=</string>
+    <string name="url_base_correo">http://prueba.movilbox.net:88/movistar_uruguay/distribuidor/modulos/login/controlador.php</string>-->
 
     <!-- URL BASE PRODUCCION -->
     <!-- <string name="url_base">https://uruguay.movilbox.net/app/servicios/services.php?solicitud=</string>

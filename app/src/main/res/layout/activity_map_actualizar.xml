@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linearLayout6">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="net.movilbox.dcsuruguay.Activity.ActMapActualizar" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/linearLayout6">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/idpos"
+            android:padding="2dp"
+            android:layout_marginLeft="3dp"
+            android:id="@+id/txtIdPunto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/raz_n_social"
+            android:padding="2dp"
+            android:layout_marginLeft="3dp"
+            android:id="@+id/txtNombrePunto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/direcci_n"
+            android:padding="2dp"
+            android:layout_marginLeft="3dp"
+            android:id="@+id/txtDireccion" />
+
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cancelar"
+                android:layout_weight="1"
+                android:id="@+id/btnCancelar"
+                android:layout_gravity="center_vertical" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actualizar"
+                android:layout_weight="1"
+                android:id="@+id/btnActualizar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+
