@@ -307,6 +307,21 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:text="@string/tomar_pedido"
+                    android:id="@+id/pedido"
+                    android:gravity="center_vertical|center_horizontal" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="autoventa"
+                    android:visibility="gone"
+                    android:id="@+id/btn_auto_venta"
+                    android:gravity="center_vertical|center_horizontal" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/venta"
                     android:id="@+id/btn_tomar_pedido"
                     android:gravity="center_vertical|center_horizontal" />

@@ -88,7 +88,7 @@ public class ControllerDireccion {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entEstandars;
 
     }

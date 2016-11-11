@@ -153,7 +153,7 @@ public class ControllerPunto {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return ruteroArrayList;
     }
 
@@ -203,7 +203,7 @@ public class ControllerPunto {
             entRutero.setTipo_documento(cursor.getInt(23));
             entRutero.setVende_recargas(cursor.getInt(24));
         }
-
+        cursor.close();
         return entRutero;
     }
 
@@ -292,6 +292,7 @@ public class ControllerPunto {
             } while (cursor.moveToNext());
 
         }
+        cursor.close();
         return sincronizarPedidosArrayList;
     }
 
@@ -378,6 +379,7 @@ public class ControllerPunto {
             } while (cursor.moveToNext());
 
         }
+        cursor.close();
         return sincronizarPedidosArrayList;
     }
 

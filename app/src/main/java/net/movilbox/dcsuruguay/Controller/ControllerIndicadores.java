@@ -105,7 +105,7 @@ public class ControllerIndicadores {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entIndicadoresArrayList;
 
     }

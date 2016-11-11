@@ -83,7 +83,7 @@ public class ControllerMunicipio {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entEstandars;
 
     }

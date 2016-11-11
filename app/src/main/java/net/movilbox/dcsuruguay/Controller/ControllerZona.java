@@ -66,7 +66,7 @@ public class ControllerZona {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entEstandars;
 
     }

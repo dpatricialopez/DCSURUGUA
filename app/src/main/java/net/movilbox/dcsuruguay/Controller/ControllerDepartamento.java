@@ -82,7 +82,7 @@ public class ControllerDepartamento {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entEstandars;
 
     }

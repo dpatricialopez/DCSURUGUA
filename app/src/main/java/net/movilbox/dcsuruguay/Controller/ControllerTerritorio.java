@@ -65,7 +65,7 @@ public class ControllerTerritorio {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entEstandars;
 
     }

@@ -88,7 +88,7 @@ public class ControllerEstadoC {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entEstandars;
 
     }

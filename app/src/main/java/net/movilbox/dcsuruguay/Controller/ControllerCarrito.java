@@ -84,7 +84,7 @@ public class ControllerCarrito {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entCarritoVentas;
     }
 
@@ -119,7 +119,7 @@ public class ControllerCarrito {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entCarritoVentas;
     }
 
@@ -134,7 +134,7 @@ public class ControllerCarrito {
         if (cursor.moveToFirst()) {
             validador = false;
         }
-
+        cursor.close();
         return validador;
     }
 

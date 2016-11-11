@@ -86,7 +86,7 @@ public class ControllerCategoria {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return entEstandars;
 
     }

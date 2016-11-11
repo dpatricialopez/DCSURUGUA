@@ -115,6 +115,7 @@ public class ControllerLogin {
         if (cursor.moveToFirst()) {
             indicador = true;
         }
+        cursor.close();
         return indicador;
     }
 

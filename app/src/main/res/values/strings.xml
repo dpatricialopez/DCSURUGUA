@@ -73,6 +73,7 @@
     <string name="title_activity_act_carrito">Carrito</string>
     <string name="total_a_pagar">Total a pagar: $</string>
     <string name="finalizar_venta">Finalizar Venta</string>
+    <string name="tomar_pedido">Tomar pedido</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

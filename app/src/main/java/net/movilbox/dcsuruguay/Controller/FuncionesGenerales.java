@@ -34,6 +34,7 @@ public class FuncionesGenerales {
         if (cursor.moveToFirst()) {
             indicador = 1;
         }
+        cursor.close();
         return indicador;
     }
 
@@ -81,7 +82,7 @@ public class FuncionesGenerales {
             indicador.setFechainicial(cursor.getString(5));
             indicador.setFechaFinal(cursor.getString(6));
         }
-
+        cursor.close();
         return indicador;
     }
 
@@ -104,6 +105,7 @@ public class FuncionesGenerales {
             Log.d("data", "failure to insert word,", e);
             return false;
         }
+
         return true;
     }
 
@@ -133,7 +135,7 @@ public class FuncionesGenerales {
 
             } while (cursor.moveToNext());
         }
-
+        cursor.close();
         return tracingArrayList;
 
     }
@@ -230,7 +232,7 @@ public class FuncionesGenerales {
 
             } while (cursor.moveToNext());
         }
-
+        cursor.close();
         return noVisitaArrayList;
 
     }

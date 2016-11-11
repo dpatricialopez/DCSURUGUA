@@ -89,7 +89,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return motivosListist;
     }
 
@@ -119,7 +119,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return motivosListist;
     }
 
@@ -152,7 +152,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return referenciaList;
     }
 
@@ -182,7 +182,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return referenciaList;
     }
 
@@ -217,7 +217,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return referenciaList;
     }
 
@@ -259,7 +259,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return referenciaList;
     }
 
@@ -297,7 +297,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return referenciaList;
     }
 
@@ -344,7 +344,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return referenciaList;
     }
 
@@ -371,7 +371,7 @@ public class ControllerInventario {
         if (cursor.moveToFirst()) {
             valorReferencia = cursor.getDouble(0);
         }
-
+        cursor.close();
         return valorReferencia;
 
     }
@@ -401,7 +401,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return referenciaList;
     }
 
@@ -430,7 +430,7 @@ public class ControllerInventario {
             } while (cursor.moveToNext());
 
         }
-
+        cursor.close();
         return referenciaList;
     }
 

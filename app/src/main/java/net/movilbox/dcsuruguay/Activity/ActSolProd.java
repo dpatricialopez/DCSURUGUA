@@ -482,10 +482,7 @@ public class ActSolProd extends AppCompatActivity {
 
 
     public void pedido(final int listposition, final int groupoposition, final int children){
-        final ArrayList<String> expandableListTipo=new ArrayList<>();
-        expandableListTipo.add("Combos");
-        expandableListTipo.add("Sims");
-        expandableListTipo.add("Equipos");
+         final ArrayList<String> expandableListTipo=new ArrayList<>(expandable.get(expandableListTitle.get(listposition)).keySet());
 
         final DialogSolProducto dialog = new DialogSolProducto(ActSolProd.this, expandable.get(expandableListTitle.get(listposition)).get(expandableListTipo.get(groupoposition)).get(children).getProducto());
         dialog.show();

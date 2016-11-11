@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    //permisos de secciones
+    <bool name="tomar_pedido_equipos">false</bool>
+</resources>
