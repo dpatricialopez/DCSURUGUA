@@ -364,7 +364,7 @@ public class ActLogUru extends BaseActivity implements View.OnClickListener, Goo
                         } else if (error instanceof AuthFailureError) {
                             Toast.makeText(ActLogUru.this, "Error Servidor", Toast.LENGTH_LONG).show();
                         } else if (error instanceof ServerError) {
-                            Toast.makeText(ActLogUru.this, "Server Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(ActLogUru.this, "Server Error"+error.getClass().getSimpleName(), Toast.LENGTH_LONG).show();
                         } else if (error instanceof NetworkError) {
                             Toast.makeText(ActLogUru.this, "Error de red", Toast.LENGTH_LONG).show();
                         } else if (error instanceof ParseError) {

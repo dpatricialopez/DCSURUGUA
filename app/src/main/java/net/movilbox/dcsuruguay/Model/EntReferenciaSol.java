@@ -25,6 +25,17 @@ public class EntReferenciaSol {
     @SerializedName("tipo_ref")
     private int tipo_ref;
 
+    @SerializedName("tipo_grupo")
+    private int tipo_grupo;
+
+    public int getTipo_grupo() {
+        return tipo_grupo;
+    }
+
+    public void setTipo_grupo(int tipo_grupo) {
+        this.tipo_grupo = tipo_grupo;
+    }
+
     private int cantidadSol;
 
     public int getCantidadSol() {

@@ -141,6 +141,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
+            android:name=".Activity.ActSolProd"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".Activity.ActMapActualizar"
             android:label="Mapa PDV"
             android:screenOrientation="portrait"

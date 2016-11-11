@@ -211,8 +211,11 @@ public class ActMenu extends BaseActivity implements NavigationView.OnNavigation
         } else if (id == R.id.nav_sol_producto) {
 
             if (connectionDetector.isConnected()) {
-                toolbar.setTitle(String.format("Solicitar Producto %s", tituloOff));
-                fragmentClass = FragmentSolProducto.class;
+/*                toolbar.setTitle(String.format("Solicitar Producto %s", tituloOff));
+                fragmentClass = FragmentSolProducto.class;*/
+                Intent intent = new Intent(this, ActSolProd.class);
+                startActivity(intent);
+                overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             } else {
                 TastyToast.makeText(this, "El modulo solo funciona en modo ONLINE", TastyToast.LENGTH_LONG, TastyToast.WARNING);
             }
