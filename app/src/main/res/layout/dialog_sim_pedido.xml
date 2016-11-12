@@ -6,9 +6,10 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corner_layout"
         android:orientation="horizontal"
-        android:padding="3dp">
+        android:padding="6dp">
 
         <TextView
             android:layout_width="match_parent"
@@ -16,15 +17,45 @@
             android:textStyle="bold"
             android:layout_weight="1"
             android:textSize="16dp"
+            android:textColor="@color/actionBarColorText"
+            android:text="Cantidad Sugerida" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textColor="@color/actionBarColorText"
             android:text="Cantidad Solicitada"
             android:gravity="center" />
 
-        <EditText
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grid_item_bg_pressed"
+        android:orientation="horizontal">
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:text="0"
+            android:textSize="17dp"
+            android:padding="6dp"
+            android:id="@+id/txtCanSugerida"
+            android:gravity="center_vertical|center_horizontal" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Nº"
-            android:textSize="16dp"
+            android:textSize="17dp"
             android:id="@+id/editCantidad"
             android:padding="6dp"
             android:inputType="number"

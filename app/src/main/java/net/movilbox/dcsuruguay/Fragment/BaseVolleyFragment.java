@@ -2,6 +2,7 @@ package net.movilbox.dcsuruguay.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.widget.Toast;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -20,6 +21,9 @@ import net.movilbox.dcsuruguay.Controller.ControllerPunto;
 import net.movilbox.dcsuruguay.Controller.ControllerTerritorio;
 import net.movilbox.dcsuruguay.Controller.ControllerZona;
 import net.movilbox.dcsuruguay.Controller.FuncionesGenerales;
+import net.movilbox.dcsuruguay.R;
+
+import dmax.dialog.SpotsDialog;
 
 public class BaseVolleyFragment extends Fragment {
 
@@ -38,12 +42,14 @@ public class BaseVolleyFragment extends Fragment {
     public ControllerLogin controllerLogin;
     public ControllerInventario controllerInventario;
     public ControllerCarrito controllerCarrito;
+    private SpotsDialog alertDialog;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         volley = VolleyS.getInstance(getActivity().getApplicationContext());
         fRequestQueue = volley.getRequestQueue();
+        alertDialog = new SpotsDialog(getActivity(), R.style.Custom);
     }
 
     @Override
@@ -70,6 +76,14 @@ public class BaseVolleyFragment extends Fragment {
 
     public boolean isValiEmail(String dato) { return !dato.matches("[a-zA-Z0-9._-]+@[a-z]+\\.[a-z]+"); }
 
+    public void onConnectionFailed(String error) {
+        Toast.makeText(getActivity(), error, Toast.LENGTH_SHORT).show();
+        onConnectionFinished(alertDialog);
+    }
+
+     public void onConnectionFinished(SpotsDialog spotsDialog) {
+        spotsDialog.dismiss();
+    }
     public Boolean isOnlineNet() {
 
         try {

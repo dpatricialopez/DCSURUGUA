@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="@dimen/ancho_car"
+        android:layout_height="wrap_content"
+        card_view:cardBackgroundColor="@color/actionBarColorText"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="5dp"
+        card_view:contentPaddingBottom="1dp"
+        card_view:contentPaddingLeft="1dp"
+        card_view:contentPaddingRight="1dp"
+        card_view:contentPaddingTop="1dp"
+        android:layout_alignParentBottom="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="#FFF"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/alto_imagen_sim"
+                android:id="@+id/img_producto"
+                android:tint="@color/colorPrimary"
+                android:src="@drawable/ic_sim_card_black_24dp"
+                android:contentDescription="@string/app_name" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="2dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/referencia"
+                    android:paddingLeft="4dp"
+                    android:textSize="17sp"
+                    android:id="@+id/txt_referemcia"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="@string/stock"
+                    android:paddingLeft="4dp"
+                    android:textSize="15sp"
+                    android:id="@+id/txtStock"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="@string/inven"
+                    android:paddingLeft="4dp"
+                    android:textSize="15sp"
+                    android:id="@+id/txtInven"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="@string/precio"
+                    android:paddingLeft="4dp"
+                    android:textSize="15sp"
+                    android:id="@+id/txtprecio"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:visibility="gone"
+                    android:tint="@color/rojo_progress"
+                    android:src="@drawable/ic_warning_black_24dp"
+                    android:id="@+id/imgQuiebre"
+                    android:layout_marginTop="3dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/accept" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
+                    android:text="@string/cantidad_0"
+                    android:paddingLeft="4dp"
+                    android:textSize="15sp"
+                    android:id="@+id/txtCantidadPedida"
+                    android:layout_weight="1"
+                    android:textColor="@color/rojo_progress"
+                    android:visibility="visible"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:background="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                style="@style/BrandButtonStyle2"
+                android:layout_weight="1"
+                android:text="@string/pedir_simcard"
+                android:id="@+id/btnCatalogoSim"
+                android:gravity="center_vertical|center_horizontal" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

@@ -74,7 +74,12 @@
     <string name="total_a_pagar">Total a pagar: $</string>
     <string name="finalizar_venta">Finalizar Venta</string>
     <string name="tomar_pedido">Tomar pedido</string>
-
+    <string name="cantidad">Cantidad</string>
+    <string name="precio">Precio</string>
+    <string name="referencias">Referencias</string>
+    <string name="referencia">Referencia</string>
+    <string name="pn">PN</string>
+    <string name="d_inve_12">D. Inve: 12</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="busqueda_avanzada">Busqueda Avanzada</string>
@@ -102,6 +107,7 @@
     <string name="planificaci_n_visitas">Planificar Visita</string>
     <string name="planificaci_n">Planificación</string>
     <string name="tipo">Tipo</string>
+    <string name="speech">Speech</string>
     <string name="parametros_de_busqueda">Parametros de busqueda</string>
     <string name="estado">Estado</string>
     <string name="title_activity_act_detalle_solicitud_p">Detalle</string>
@@ -114,8 +120,20 @@
     <string name="title_activity_act_editar_punto">Editar Punto</string>
     <string name="nombreIdPos">Nombre PDV</string>
     <string name="correo">Correo</string>
+
+    <string name="pantalla">Pantalla</string>
+    <string name="camara">Camara</string>
+    <string name="cam_frontal">Cam Frontal</string>
+    <string name="memoria">Memoria</string>
+    <string name="bluetooh">Bluetooh</string>
     <string name="title_activity_maps_puntos">Mapas</string>
     <string name="title_activity_act_maps_punto">Map</string>
+    <string name="stock">Stock</string>
+    <string name="inven">inven</string>
+    <string name="cantidad_0">Cantidad 0</string>
+    <string name="pedir_simcard">Pedir Simcard</string>
+    <string name="pedir_combo">Pedir Combo</string>
+
     <!-- -->
 
 </resources>

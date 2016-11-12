@@ -10,6 +10,7 @@
     <color name="grid_item_bg_pressed">#efeeee</color>
     <color name="list_item_background">#AACCCCCC</color>
 
+    <color name="activity_bg">#00e4e5e5</color>
     <color name="filn">#607D8B</color>
     <color name="colorSinDatos">#f9e367</color>
     <color name="colorErrorConexion">#42a5f5</color>

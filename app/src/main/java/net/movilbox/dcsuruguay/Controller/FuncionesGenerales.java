@@ -12,7 +12,11 @@ import net.movilbox.dcsuruguay.Model.NoVisita;
 import net.movilbox.dcsuruguay.Model.TimeService;
 import net.movilbox.dcsuruguay.Model.Tracing;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 /**
@@ -64,6 +68,27 @@ public class FuncionesGenerales {
 
     }
 
+    public String getDatePhoneFecha() {
+
+        Calendar cal = new GregorianCalendar();
+        Date date = cal.getTime();
+
+        String df = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+        return df;
+
+    }
+
+    public String getDatePhoneHora() {
+
+        Calendar cal = new GregorianCalendar();
+        Date date = cal.getTime();
+
+        String df = new SimpleDateFormat("HH:mm:ss").format(date);
+
+        return df;
+
+    }
     public TimeService getTimeService () {
 
         Cursor cursor;
